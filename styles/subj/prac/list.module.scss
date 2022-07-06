@@ -1,0 +1,93 @@
+@import "../../vars.scss";
+.pracList {
+  width: 60%;
+  margin: auto;
+  @include mobile {
+    width: 95%;
+  }
+ 
+  .list,
+  .uLoading {
+    width: 100%;
+    display: flex;
+    white-space: nowrap;
+    overflow-x: auto;
+    padding: 0 1em;
+    height: 5.5em;
+    li {
+      border-radius: $minRadius;
+    }
+  }
+  .uLoading {
+    li {
+      margin: auto;
+      width: 50px;
+      height: 50px;
+      user-select: none;
+      background: $grey;
+    }
+  }
+  .list {
+    gap: 1.5em;
+    &::-webkit-scrollbar {
+      height: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $grey;
+      border-radius: 1em;
+    }
+    .pracLi{
+      display: grid;
+      place-items: center;
+      color: $white;
+      font-weight: 600;
+      user-select: none;
+      cursor: pointer;
+      transition: 0.2s;
+      margin: auto;
+    }
+    .pracLi {
+      padding: 1em 1.5em;
+      font-family: var(--font-en);
+      &.selected {
+        box-shadow: 0 0 0 3px $blue;
+        padding: 1.2em 1.4em;
+        @include desktop {
+          &:hover {
+            background: $black2;
+          }
+        }
+        &.sCorrect {
+          box-shadow: 0 0 0 2px $purple;
+        }
+        &.sInCorrect {
+          box-shadow: 0 0 0 3px $red;
+        }
+      }
+      &.correct {
+        background: $purple;
+        @include desktop {
+          &:hover {
+            background: $purple2;
+          }
+        }
+      }
+      &.incorrect {
+        background: $red;
+        @include desktop {
+          &:hover {
+            background: $red2;
+          }
+        }
+      }
+      &.notyet {
+        box-shadow: 0 0 0 1px $grey;
+        @include desktop {
+          &:hover {
+            background: $black;
+          }
+        }
+      }
+    }
+  }
+}

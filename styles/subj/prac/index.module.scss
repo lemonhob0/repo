@@ -1,0 +1,12 @@
+@import "../../vars.scss";
+.prac {
+  padding: 2em 0;
+  & > p {
+    direction: rtl;
+    font-size: 1em;
+    font-family: var(--font-ar);
+    padding-right: 1em;
+    color: $white3;
+    padding-bottom: 0.5em;
+  }
+}

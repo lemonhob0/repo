@@ -1,0 +1,104 @@
+@import "../../../vars.scss";
+.btns {
+  padding-inline: 0.5em;
+  display: flex;
+  flex-wrap: wrap;
+  .button,
+  button {
+    padding-top: 0.5em;
+    background: none;
+    color: $white;
+    font-size: 1.7rem;
+    &.fullscreen {
+      padding-top: 0.6em;
+      font-size: 1.5rem;
+    }
+    cursor: pointer;
+    transition: 0.2s;
+    &:hover {
+      color: $purple2;
+    }
+  }
+  .left_controls {
+    display: flex;
+    flex-wrap: wrap;
+    .volume {
+      margin-right: 1em;
+      margin-left: 1em;
+      height: 100%;
+      user-select: none;
+      position: relative;
+      display: flex;
+      button {
+        padding-right: 0.2em;
+      }
+      &:hover,
+      &.fadeIn {
+        .listner {
+          display: block;
+        }
+        .vol_line {
+          width: 7em;
+          & > div {
+            .vol {
+              &::after {
+                opacity: 1;
+                border-radius: 1em;
+              }
+            }
+          }
+        }
+      }
+      .listner {
+        position: absolute;
+        top: 3px;
+        right: 0;
+        width: 7em;
+        display: none;
+        height: calc(100% - 3px);
+        cursor: pointer;
+        z-index: 2;
+      }
+      .vol_line {
+        width: 0;
+        margin-top: 4px;
+        display: grid;
+        place-items: center;
+        transition: 0.2s;
+        & > div {
+          width: 90%;
+          height: 3px;
+          position: relative;
+          background: $grey;
+          .vol {
+            position: absolute;
+            height: 100%;
+            background: $white;
+            &::after {
+              content: "";
+              position: absolute;
+              top: -5.5px;
+              right: -8px;
+              width: 14px;
+              height: 14px;
+              opacity: 0;
+              background: $white;
+            }
+          }
+        }
+      }
+    }
+    .time_display {
+      color: $white;
+      margin-block: auto;
+      p {
+        text-align: center;
+        padding-top: 3px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+  .right_controls {
+    margin-left: auto;
+  }
+}

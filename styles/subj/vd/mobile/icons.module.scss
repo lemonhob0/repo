@@ -1,0 +1,40 @@
+@import "../../../vars.scss";
+.playPause {
+  color: $white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+}
+
+.isHeld {
+  opacity: 1;
+  z-index: 2;
+}
+.show {
+  animation: 0.15s playPauseFadeIn forwards;
+  @keyframes playPauseFadeIn {
+    from {
+      opacity: 0;
+      z-index: 1;
+    }
+    to {
+      opacity: 1;
+      z-index: 2;
+    }
+  }
+}
+.hide {
+  animation: 0.2s playPauseFadeOut forwards;
+  @keyframes playPauseFadeOut {
+    from {
+      opacity: 1;
+      z-index: 2;
+    }
+    to {
+      opacity: 0;
+      z-index: 1;
+    }
+  }
+}

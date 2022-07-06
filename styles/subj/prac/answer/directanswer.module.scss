@@ -1,0 +1,17 @@
+@import "../../../vars.scss";
+.direct_answer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: auto;
+  gap: 1em;
+  li {
+    background: none;
+    cursor: pointer;
+    padding: 1em 1.5em;
+    font-size: 1rem;
+    color: $white3;
+    margin-inline: auto;
+    margin-top: 1em;
+  }
+}

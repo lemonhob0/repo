@@ -1,0 +1,64 @@
+@import "../../../vars.scss";
+.myinput {
+  text-align: center;
+  @include mobile {
+    width: 100%;
+  }
+  label {
+    color: $grey;
+    letter-spacing: 1px;
+    font-family: var(--font-ar);
+  }
+  input {
+    font-family: var(--font-ar);
+    background: none;
+    border: none;
+    border-bottom: 1px solid $grey3;
+    font-size: 1.2rem;
+    padding: 0.5em 1em;
+    margin-top: 1em;
+    color: $white;
+    transition: 0.2s;
+    @include mobile {
+      width: 50%;
+      border-bottom: none;
+      box-shadow: inset 0 0 0 1px $grey;
+      border-radius: $minRadius;
+    }
+    &.selectme {
+      border: none;
+      box-shadow: inset 0 0 0 1px $grey;
+      border-radius: $minRadius;
+    }
+  }
+  button {
+    background: $black2;
+    color: $white;
+    border: none;
+    font-size: 1rem;
+    padding: 0.7em 1em;
+    letter-spacing: 1px;
+    margin-left: 1em;
+    border-radius: $minRadius;
+    cursor: pointer;
+    transition: 0.2s;
+    font-family: var(--font-ar);
+    @include desktop {
+      &:hover {
+        background: $grey3;
+      }
+    }
+    &.correct {
+      background: $purple;
+    }
+    &.incorrect {
+      background: $red;
+    }
+    &.confirmed {
+      background: $blue;
+    }
+    &.not_confirmed {
+      box-shadow: inset 0 0 0 2px $blue;
+    }
+  }
+}

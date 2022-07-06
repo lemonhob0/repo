@@ -1,0 +1,50 @@
+@import "../vars.scss";
+.form {
+  text-align: center;
+  padding-bottom: 1em;
+  position: relative;
+  &.loading {
+    input {
+      box-shadow: none;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: $blue2;
+      animation: loadme 2s infinite;
+      bottom: 0;
+      @keyframes loadme {
+        0% {
+          left: 40%;
+          transform: translateX(-40%);
+        }
+        50% {
+          left: 60%;
+          transform: translateX(-60%);
+        }
+        100% {
+          left: 40%;
+          transform: translateX(-40%);
+        }
+      }
+    }
+  }
+  input {
+    width: 50%;
+    font-size: 1rem;
+    padding: 0.7em;
+    border-radius: $minRadius;
+    background: $black2;
+    color: $white;
+    font-family: var(--font-ar);
+    direction: rtl;
+    &.focus {
+      box-shadow: 0 0 0 1px $grey;
+    }
+    @include mobile {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@import "../../../vars.scss";
+.selectme {
+  box-shadow: inset 0 0 0 1px $grey;
+  border-radius: $minRadius;
+  transition: 0.2s;
+  &.selected {
+    box-shadow: 0 0 0 3px $blue;
+  }
+  &.correct {
+    box-shadow: 0 0 0 3px $purple;
+    @include desktop {
+      &:hover {
+        box-shadow: 0 0 0 3px $purple2;
+      }
+    }
+  }
+  &.incorrect {
+    box-shadow: 0 0 0 3px $red;
+    &:hover {
+      box-shadow: 0 0 0 3px $red2;
+    }
+  }
+  @include mobile {
+    margin-inline: auto;
+  }
+  @include desktop {
+    &:hover {
+      background: $black2;
+    }
+  }
+}

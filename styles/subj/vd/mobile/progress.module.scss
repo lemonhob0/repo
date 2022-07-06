@@ -1,0 +1,46 @@
+@import "../../../vars.scss";
+
+.progress {
+  position: relative;
+  margin: auto 0;
+  background: $grey3;
+  .listener {
+    position: absolute;
+    top: -9px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    z-index: 3;
+  }
+  .load {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: $white;
+  }
+  .read {
+    position: relative;
+    height: 2px;
+    background: $purple;
+    z-index: 2;
+    & > span {
+      position: absolute;
+      right: -5px;
+      top: -6px;
+      border-radius: 1em;
+      width: 13px;
+      height: 13px;
+      background: $purple;
+      span {
+        position: absolute;
+        top: -30px;
+        color: $white;
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+        font-family: var(--font-en);
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+@mixin mobile {
+  @media only screen and (max-width: 986px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media only screen and (min-width: 987px) {
+    @content;
+  }
+}
+
+@mixin rotate {
+  @media screen and (min-width: 320px) and (max-width: 986px) and (orientation: landscape) {
+    @content;
+  }
+}
+
+// radiuses
+$minRadius: 0.3em;
+$maxRadius: 10em;
+
+// blacks
+
+$wash: #111111;
+$black: #181818;
+$black2: #202020;
+
+//whites
+
+$white: #ffffff;
+$white2: #eeeeee;
+$white3: #bdbdbd;
+
+// greys
+
+$grey: #aaaaaa;
+$grey2: #969696;
+$grey3: #505050;
+
+// blues
+
+$blue: #2465fd;
+$blue2: #0d53f5;
+
+// reds
+
+$red: #f30b0b;
+$red2: #fd1616;
+
+// purples
+
+$purple: #ff09b5;
+$purple2: #ff0984;
+
+// orange
+
+$orange: #f5a20a;

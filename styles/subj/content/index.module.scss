@@ -1,0 +1,20 @@
+@import "../../vars.scss";
+.content {
+  @include mobile {
+    width: 99%;
+    margin: 0 auto;
+  }
+  & > h1 {
+    color: $white;
+    direction: rtl;
+    text-align: left;
+    padding-block: 1em;
+    padding-inline: 1em;
+    font-weight: 100;
+    @include mobile {
+      text-align: center;
+      padding-top: 1.5em;
+      padding-bottom: 1em;
+    }
+  }
+}

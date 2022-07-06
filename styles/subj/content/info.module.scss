@@ -1,0 +1,53 @@
+@import "../../vars.scss";
+.info {
+  padding-inline: 1em;
+  direction: rtl;
+  padding-bottom: 1.5em;
+  @include mobile {
+    padding-inline: 0.7em;
+    padding-bottom: 1.5em;
+    display: flex;
+    .prv {
+      margin-right: auto;
+      margin-left: 0;
+      background: $black;
+    }
+  }
+  button {
+    margin-left: 2em;
+    padding: 0.5em 1.5em;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-family: var(--font-ar);
+    cursor: pointer;
+    transition: 0.2s;
+    border-radius: $minRadius;
+    span {
+      font-size: 0.7rem;
+    }
+    &.next {
+      color: $white;
+      background: $blue;
+      span {
+        padding-left: 0.5em;
+      }
+      @include desktop {
+        &:hover {
+          background: $blue2;
+        }
+      }
+    }
+    &.prv {
+      color: $white2;
+      background: none;
+      span {
+        padding-right: 0.5em;
+      }
+      @include desktop {
+        &:hover {
+          background: $black2;
+        }
+      }
+    }
+  }
+}

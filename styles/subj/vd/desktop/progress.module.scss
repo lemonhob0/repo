@@ -1,0 +1,71 @@
+@import "../../../vars.scss";
+.progress {
+  width: 100%;
+  height: 3px;
+  background: $grey3;
+  position: absolute;
+  top: 0;
+  transition: 0.1s;
+  user-select: none;
+  cursor: pointer;
+  div {
+    height: 100%;
+  }
+  &:hover,
+  &.is_held {
+    top: -2px;
+    height: 5px;
+    .read {
+      background: $purple2;
+      span {
+        opacity: 1;
+      }
+    }
+  }
+  & > div {
+    position: relative;
+    width: 100%;
+    div {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+.read {
+  background: $purple;
+  z-index: 1;
+  span {
+    position: absolute;
+    right: -5px;
+    width: 15px;
+    height: 15px;
+    background: $purple;
+    top: -5px;
+    border-radius: 1em;
+    opacity: 0;
+    transition: 0.1s opacity;
+  }
+}
+.listen {
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  &:hover span,
+  .is_held {
+    transition: 0.2s opacity;
+    opacity: 1;
+  }
+  span {
+    opacity: 0;
+    position: absolute;
+    top: -3em;
+    color: $white;
+    font-family: var(--font-en);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+  }
+}
+.load {
+  background: $white;
+}

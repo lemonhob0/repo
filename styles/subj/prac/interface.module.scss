@@ -1,0 +1,145 @@
+@import "../../vars.scss";
+.interface {
+  width: 70%;
+  margin-inline: auto;
+  margin-top: 1em;
+  min-height: 50vh;
+  background: $black;
+  position: relative;
+  padding-inline: 5%;
+  padding-block: 1em;
+  border-radius: $minRadius;
+  @include desktop {
+    box-shadow: 5px 5px 5px 1px $black;
+  }
+  @include mobile {
+    width: 100%;
+    padding-inline: 2%;
+  }
+}
+.text {
+  color: $white;
+  text-align: center;
+  padding: 1em 0;
+  p {
+    font-size: 1rem;
+    font-family: var(--font-ar);
+  }
+}
+.pracImg {
+  width: 100%;
+  margin: 1em auto;
+  text-align: center;
+  background: $grey;
+  padding: 1em;
+  overflow-x: auto;
+  border-radius: $minRadius;
+}
+
+.datum {
+  width: fit-content;
+  margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  @include mobile {
+    width: 100%;
+    margin: 0;
+  }
+  li {
+    width: fit-content;
+    padding: 1em;
+    color: $white;
+    border-radius: $minRadius;
+    background: $black2;
+    margin-left: 1em;
+    font-family: var(--font-en);
+    letter-spacing: 1px;
+    @include mobile {
+      margin-inline: auto;
+    }
+  }
+}
+
+.text_list {
+  list-style: square;
+  color: $white;
+  direction: rtl;
+  @include mobile {
+    padding-right: 1.5em;
+  }
+  li {
+    padding-top: 1em;
+    font-family: var(--font-ar);
+  }
+}
+
+.sendAnswers {
+  text-align: right;
+  @include mobile {
+    text-align: center;
+  }
+  p {
+    text-align: center;
+    color: $red;
+    padding-bottom: 1em;
+    font-family: var(--font-ar);
+
+    letter-spacing: 1px;
+  }
+  div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  button {
+    margin-top: 1em;
+    padding: 1em 1.5em;
+    font-family: var(--font-ar);
+    border-radius: $minRadius;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    direction: rtl;
+    transition: 0.2s;
+    &:nth-child(2) {
+      background: $blue;
+      margin-left: auto;
+      color: $white;
+      @include desktop {
+        &:hover {
+          background: $blue2;
+        }
+      }
+      &.correct {
+        background: $purple;
+        color: $white;
+        &:hover {
+          background: $purple2;
+        }
+      }
+      &.incorrect {
+        background: $red;
+        color: $white;
+        &:hover {
+          background: $red2;
+        }
+      }
+    }
+    &:nth-child(1) {
+      background: none;
+      margin-right: auto;
+      &.noAnswerYet {
+        color: $white3;
+        cursor: not-allowed;
+      }
+      &.showAnswer {
+        color: $white;
+        @include desktop {
+          &:hover {
+            background: $grey3;
+          }
+        }
+      }
+    }
+  }
+}
